@@ -6,7 +6,7 @@ node {
         sh "ls"
     }
     stage('Test') {
-        sh "pwd"
-        sh "pytest TestSuite/Test_Amazon.py"
+        sh "cd Sample"
+        sh "python test.py"
     }
 }
