@@ -1,0 +1,5 @@
+.pytest_cache
+.vscode
+__pycache__
+my_results
+*.pptx
