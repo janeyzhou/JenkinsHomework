@@ -1,7 +1,7 @@
 node {
     stage('Get Project') {
         echo "checkout from git"
-        git credentialsId: '0e624d02-d940-4edb-8b3f-3d939f7a0185', url: 'https://github.com/janeyzhou/JenkinsHomework.git'
+        git credentialsId: 'c34a11a4-8ef2-4b6a-be17-c0c4f2e01216', url: 'https://github.com/janeyzhou/JenkinsHomework.git'
 
         sh "ls"
     }
