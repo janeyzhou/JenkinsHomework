@@ -7,7 +7,7 @@ node {
     }
     stage('Test') {
         sh "sh comparecontent/greeting.sh"
-		sh "diff greeting.txt testgreeting.txt"
+	sh "diff comparecontent/greeting.txt comparecontent/testgreeting.txt"
 		
     }
 }
