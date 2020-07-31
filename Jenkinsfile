@@ -7,7 +7,8 @@ node {
     }
     stage('Test') {
         sh "cd comparecontent"
-        sh "sh ./greeting.sh"
+	sh "ls"
+        sh "sh greeting.sh"
 		sh "diff greeting.txt testgreeting.txt"
 		
     }
