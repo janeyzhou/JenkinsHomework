@@ -1,0 +1,9 @@
+[32mINFO    [0m root:Logger.py:18 setup_module()
+[32mINFO    [0m root:Logger.py:18 setup_class()
+[32mINFO    [0m root:Logger.py:18 setup_method()
+[32mINFO    [0m root:Logger.py:18 Start running test case: Create employee - Correct Name and Salary
+[32mINFO    [0m root:Logger.py:18 create a new employee
+[32mINFO    [0m root:Logger.py:18 the new empolyee id is 78
+[32mINFO    [0m root:Logger.py:18 Find an employee with id: 78 from employee list
+[32mINFO    [0m root:Logger.py:18 Delete an employee with id: 78
+[32mINFO    [0m root:Logger.py:18 teardown_method()

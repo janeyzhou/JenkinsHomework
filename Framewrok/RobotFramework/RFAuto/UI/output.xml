@@ -1,0 +1,2039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200604 14:02:40.093" rpa="false">
+<suite id="s1" name="Test Search Function" source="C:\Users\janey_zhou\Desktop\UI API Automation\Framewrok\RFAuto\UI\test_suite\test_search_function.robot">
+<test id="s1-t1" name="User is able to search and view title and price of the object">
+<kw name="Given Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:40.256" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:02:40.248" endtime="20200604 14:02:45.430"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:40.248" endtime="20200604 14:02:45.430"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:02:45.558" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:02:45.431" endtime="20200604 14:02:45.558"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:45.431" endtime="20200604 14:02:45.559"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:40.248" endtime="20200604 14:02:45.559"></status>
+</kw>
+<kw name="When Search &quot;kindle&quot; From &quot;Electronics&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:45.563" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Electronics.</msg>
+<status status="PASS" starttime="20200604 14:02:45.562" endtime="20200604 14:02:45.814"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:45.561" endtime="20200604 14:02:45.814"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:45.816" level="INFO">Typing text 'kindle' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:02:45.816" endtime="20200604 14:02:45.897"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:45.815" endtime="20200604 14:02:45.897"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:02:45.898" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:02:45.898" endtime="20200604 14:02:47.309"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:45.897" endtime="20200604 14:02:47.309"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.346" level="INFO">Page title is 'Amazon.com : kindle'.</msg>
+<status status="PASS" starttime="20200604 14:02:47.309" endtime="20200604 14:02:47.346"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.309" endtime="20200604 14:02:47.346"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:45.560" endtime="20200604 14:02:47.346"></status>
+</kw>
+<kw name="Then View Title and Price From Search Result Items" library="search_resource">
+<kw name="Wait Search Result List" library="search_result_page">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:div[data-component-type='s-search-result']</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.347" endtime="20200604 14:02:47.359"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.347" endtime="20200604 14:02:47.360"></status>
+</kw>
+<kw name="Get Title From Search Result Items" library="search_result_page">
+<assign>
+<var>@{titles}</var>
+</assign>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>css:div[data-component-type='s-search-result'] span[class='a-size-medium a-color-base a-text-normal']</arg>
+</arguments>
+<assign>
+<var>@{result}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.373" level="INFO">@{result} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="964dfba08ac3fac6755a0407f1e262c7", element="08fa404e-c6d3-49a7-b1d8-45f340d3b0b6")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20200604 14:02:47.360" endtime="20200604 14:02:47.373"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{titleList}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.374" level="INFO">@{titleList} = [ ]</msg>
+<status status="PASS" starttime="20200604 14:02:47.374" endtime="20200604 14:02:47.374"></status>
+</kw>
+<kw name="${element} IN [ @{result} ]" type="for">
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;08fa404e-c6d3-49a7-b1d8-45f340d3b0b6&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.396" level="INFO">${title} = Certified Refurbished Kindle - Now with a Built-in Front Light - Black - Includes Special Offers</msg>
+<status status="PASS" starttime="20200604 14:02:47.374" endtime="20200604 14:02:47.396"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.396" endtime="20200604 14:02:47.396"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.374" endtime="20200604 14:02:47.396"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;dda500a3-c02f-4c7f-a759-da3fefa4bf53&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.421" level="INFO">${title} = All-new Kindle Oasis - Now with adjustable warm light - 8 GB, Graphite (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.396" endtime="20200604 14:02:47.421"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.421" endtime="20200604 14:02:47.422"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.396" endtime="20200604 14:02:47.422"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;7556b8a7-8f5e-4555-a9ee-316ce5edab66&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.441" level="INFO">${title} = Kindle Fire Fast Charger [UL Listed] Fotbor AC Adapter 2A Rapid Charger with 6.6Ft Micro-USB Cable for Amazon Kindle Fire 7 HD 8 10 Tablet, Kids Edition,Kindle Fire HD HDX 7” 8.9”, Fire Phone (Black)</msg>
+<status status="PASS" starttime="20200604 14:02:47.422" endtime="20200604 14:02:47.441"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.441" endtime="20200604 14:02:47.441"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.422" endtime="20200604 14:02:47.441"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;87bb864e-dfb4-4e86-b885-3e08fd6db104&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.454" level="INFO">${title} = TAPLE Kindle Fire Charger, [UL Listed] AC Adapter Rapid Charger with 5 Ft Micro-USB Cable Compatible Kindle Fire HD, HDX 6" 7" 8.9" 9.7", Fire 7 8 10 Tablet and Phone, Tab Power Supply Cord</msg>
+<status status="PASS" starttime="20200604 14:02:47.442" endtime="20200604 14:02:47.454"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.454" endtime="20200604 14:02:47.454"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.441" endtime="20200604 14:02:47.454"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;cfad1552-36ac-4a0c-a6e7-9aa003ca5aa7&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.467" level="INFO">${title} = AILKIN Dual USB Port Wall Phone Adapter with 6.6FT Android Micro USB Port Charger Cable Compatible for Samsung J8 J7 Pro, S6 S7 Edge, LG G4 Stylo 3 2, Kindle Fire, Motorola Moto G5S/G4 Android Cable</msg>
+<status status="PASS" starttime="20200604 14:02:47.454" endtime="20200604 14:02:47.467"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.467" endtime="20200604 14:02:47.468"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.454" endtime="20200604 14:02:47.468"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;68f9a700-2d5b-4623-afa4-eb84d6897b96&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.479" level="INFO">${title} = All-new Kindle Paperwhite Water-Safe Fabric Cover (10th Generation-2018), Marine Blue</msg>
+<status status="PASS" starttime="20200604 14:02:47.468" endtime="20200604 14:02:47.479"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.479" endtime="20200604 14:02:47.479"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.468" endtime="20200604 14:02:47.479"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;3c7a583e-639e-4ddf-a4ff-a849d61b32ee&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.491" level="INFO">${title} = Kindle Paperwhite Leather Cover (10th Generation-2018)</msg>
+<status status="PASS" starttime="20200604 14:02:47.479" endtime="20200604 14:02:47.491"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.491" endtime="20200604 14:02:47.491"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.479" endtime="20200604 14:02:47.491"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;17f69f3e-e8d9-4dbc-b08f-c330a631ae9e&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.505" level="INFO">${title} = Kindle Paperwhite – Now Waterproof with 2x the Storage - 8 GB (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.491" endtime="20200604 14:02:47.505"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.505" endtime="20200604 14:02:47.505"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.491" endtime="20200604 14:02:47.505"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;ab5eb445-e749-4bce-bdc1-888205a782fa&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.517" level="INFO">${title} = Kindle Fire Fast Charger, 5V 2.4A 24W Charger for Amazon Kindle Fire HD, HDX 6" 7" 8.9" 9.7", Fire 7 8, Dual Port USB Wall Charger with 6.6FT Micro USB Cable for Samsung, Galaxy S7, Android Phone</msg>
+<status status="PASS" starttime="20200604 14:02:47.506" endtime="20200604 14:02:47.518"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.518" endtime="20200604 14:02:47.518"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.505" endtime="20200604 14:02:47.518"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;d76ca32c-8268-4b3a-a449-bcd0fadf7ad9&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.529" level="INFO">${title} = TSAUTO Tablet Kindle Fire Fast Charger [UL Listed] 2.4A AC Adapter Rapid Adapter with 5.0 Ft Micro-USB Cable for Kindle Fire HD HDX 6" 7" 8.9" 9.7" Fire 7 8 10 Tablet and Phone Tab Power Supply Cord</msg>
+<status status="PASS" starttime="20200604 14:02:47.518" endtime="20200604 14:02:47.529"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.529" endtime="20200604 14:02:47.529"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.518" endtime="20200604 14:02:47.529"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;c3b8c8a3-49e7-4a2f-9e8f-bc96bd8713a0&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.541" level="INFO">${title} = All-new Kindle - Now with a Built-in Front Light - 4 GB, Black (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.529" endtime="20200604 14:02:47.541"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.541" endtime="20200604 14:02:47.541"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.529" endtime="20200604 14:02:47.541"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;13de0cb0-2ebb-4fab-9dbc-6151b80df363&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.552" level="INFO">${title} = All-new Kindle Paperwhite Premium Leather Cover (10th Generation-2018), Rustic</msg>
+<status status="PASS" starttime="20200604 14:02:47.541" endtime="20200604 14:02:47.552"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.552" endtime="20200604 14:02:47.553"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.541" endtime="20200604 14:02:47.553"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;55da0208-7274-4971-b4e7-46fe65124ed8&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.564" level="INFO">${title} = Made for Amazon SanDisk 128 GB Micro SD Memory Card for Fire Tablets and Fire TV</msg>
+<status status="PASS" starttime="20200604 14:02:47.553" endtime="20200604 14:02:47.564"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.564" endtime="20200604 14:02:47.564"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.553" endtime="20200604 14:02:47.564"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;7cbc001d-6db7-4214-a585-ae6ebf0764fa&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.576" level="INFO">${title} = Infiland Kindle Paperwhite 2018 Case Compatible with Amazon Kindle Paperwhite 10th Generation 6 inches 2018 Release(Auto Wake/Sleep),Galaxy</msg>
+<status status="PASS" starttime="20200604 14:02:47.564" endtime="20200604 14:02:47.576"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.576" endtime="20200604 14:02:47.576"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.564" endtime="20200604 14:02:47.576"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;38e5c253-2758-46d8-8ffb-4182708f5619&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.596" level="INFO">${title} = Boskin AMZ F i r e 7 case 2017 Release,Kickstand/Impact Resistant Heavy Duty case for K i n d l e F i r e 7 inch 2017 (Black)</msg>
+<status status="PASS" starttime="20200604 14:02:47.576" endtime="20200604 14:02:47.596"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.597" endtime="20200604 14:02:47.597"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.576" endtime="20200604 14:02:47.597"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;0434be66-db0d-434f-8d0e-e05b77068497&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.611" level="INFO">${title} = MEKO(TM) (2 Pcs)[2 in 1 Precision Series] Disc Stylus/Styli Bundle with 4 Replaceable Disc Tips, 2 Replaceable Fiber Tips for All Touch Screen Devices - (Black/Blue)</msg>
+<status status="PASS" starttime="20200604 14:02:47.598" endtime="20200604 14:02:47.611"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.611" endtime="20200604 14:02:47.612"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.597" endtime="20200604 14:02:47.612"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;c2b8f1a0-b502-409e-af4f-309b669795b0&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.625" level="INFO">${title} = MAOMI for KINDIE FlRE 7 case 2017 Release,Kickstand Shock-Absorption Heavy Duty Armor Defender Cover (Red)</msg>
+<status status="PASS" starttime="20200604 14:02:47.612" endtime="20200604 14:02:47.625"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.625" endtime="20200604 14:02:47.625"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.612" endtime="20200604 14:02:47.625"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;c563a5e0-65d1-4bb4-9179-bc6ad74c3f7e&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.642" level="INFO">${title} = All-new Kindle Oasis - Now with adjustable warm light - 32 GB, Graphite - Free 4G LTE + Wi-Fi (International Version - Vodafone)</msg>
+<status status="PASS" starttime="20200604 14:02:47.626" endtime="20200604 14:02:47.642"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${titleList}</arg>
+<arg>${title}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.642" endtime="20200604 14:02:47.643"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.625" endtime="20200604 14:02:47.643"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.374" endtime="20200604 14:02:47.643"></status>
+</kw>
+<msg timestamp="20200604 14:02:47.643" level="INFO">@{titles} = [ Certified Refurbished Kindle - Now with a Built-in Front Light - Black - Includes Special Offers | All-new Kindle Oasis - Now with adjustable warm light - 8 GB, Graphite (International Version) | Ki...</msg>
+<status status="PASS" starttime="20200604 14:02:47.360" endtime="20200604 14:02:47.643"></status>
+</kw>
+<kw name="Get Price From Search Result Items" library="search_result_page">
+<assign>
+<var>@{prices}</var>
+</assign>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>css:div[data-component-type='s-search-result'] span[data-a-color='base'] span[class='a-offscreen']</arg>
+</arguments>
+<assign>
+<var>@{result}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.658" level="INFO">@{result} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="964dfba08ac3fac6755a0407f1e262c7", element="61ee6cab-aeb6-4b75-bfaf-d0d0e097b049")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20200604 14:02:47.644" endtime="20200604 14:02:47.658"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{priceList}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.659" level="INFO">@{priceList} = [ ]</msg>
+<status status="PASS" starttime="20200604 14:02:47.658" endtime="20200604 14:02:47.659"></status>
+</kw>
+<kw name="${element} IN [ @{result} ]" type="for">
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;61ee6cab-aeb6-4b75-bfaf-d0d0e097b049&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.666" level="INFO">${price} = $79.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.659" endtime="20200604 14:02:47.666"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.666" endtime="20200604 14:02:47.667"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.659" endtime="20200604 14:02:47.667"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;5642ae29-829e-4270-9170-a133c51010a0&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.674" level="INFO">${price} = $269.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.667" endtime="20200604 14:02:47.674"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.674" endtime="20200604 14:02:47.674"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.667" endtime="20200604 14:02:47.674"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;b97644df-700b-4c11-a765-0ad5b475abf3&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.681" level="INFO">${price} = $11.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.674" endtime="20200604 14:02:47.681"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.681" endtime="20200604 14:02:47.682"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.674" endtime="20200604 14:02:47.682"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;e58de929-2282-4888-8cf5-e64157e49dbc&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.688" level="INFO">${price} = $10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.682" endtime="20200604 14:02:47.688"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.688" endtime="20200604 14:02:47.688"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.682" endtime="20200604 14:02:47.688"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;c1ed1659-5fa1-48b1-80cf-658cc545c97e&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.694" level="INFO">${price} = $8.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.689" endtime="20200604 14:02:47.694"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.694" endtime="20200604 14:02:47.694"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.688" endtime="20200604 14:02:47.694"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;07dcbdef-a8fd-4964-bfdf-5f12b57d8645&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.700" level="INFO">${price} = $29.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.694" endtime="20200604 14:02:47.701"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.701" endtime="20200604 14:02:47.701"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.694" endtime="20200604 14:02:47.701"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;53cd8df6-4d29-4d02-a853-33e67dd3c496&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.706" level="INFO">${price} = $39.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.701" endtime="20200604 14:02:47.706"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.706" endtime="20200604 14:02:47.706"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.701" endtime="20200604 14:02:47.706"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;f60d2797-3892-465c-af48-69dc36b6ccb1&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.711" level="INFO">${price} = $149.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.707" endtime="20200604 14:02:47.711"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.711" endtime="20200604 14:02:47.711"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.706" endtime="20200604 14:02:47.712"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;25c0280a-575d-4b58-86dd-4062772fabf9&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.717" level="INFO">${price} = $13.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.712" endtime="20200604 14:02:47.717"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.717" endtime="20200604 14:02:47.717"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.712" endtime="20200604 14:02:47.717"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;eb3ec101-ca0b-4af5-a249-db153bed19e4&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.723" level="INFO">${price} = $10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.717" endtime="20200604 14:02:47.723"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.723" endtime="20200604 14:02:47.723"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.717" endtime="20200604 14:02:47.723"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;ff4c61e2-06cd-4a2f-9418-b09bf69b66a3&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.728" level="INFO">${price} = $109.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.723" endtime="20200604 14:02:47.728"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.728" endtime="20200604 14:02:47.728"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.723" endtime="20200604 14:02:47.728"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;ffe71946-8ec8-4c9c-9914-c113c1b4b4f1&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.733" level="INFO">${price} = $59.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.728" endtime="20200604 14:02:47.733"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.733" endtime="20200604 14:02:47.733"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.728" endtime="20200604 14:02:47.733"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;17035da5-dd53-43f9-a16b-429e21005487&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.737" level="INFO">${price} = $22.49</msg>
+<status status="PASS" starttime="20200604 14:02:47.733" endtime="20200604 14:02:47.737"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.737" endtime="20200604 14:02:47.738"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.733" endtime="20200604 14:02:47.738"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;eac502e6-6587-4ae0-ab3c-735419eab07c&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.742" level="INFO">${price} = $10.95</msg>
+<status status="PASS" starttime="20200604 14:02:47.738" endtime="20200604 14:02:47.742"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.742" endtime="20200604 14:02:47.742"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.738" endtime="20200604 14:02:47.742"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;968e9fae-fd0a-4251-b235-bbd1ba195309&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.751" level="INFO">${price} = $10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.742" endtime="20200604 14:02:47.751"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.751" endtime="20200604 14:02:47.751"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.742" endtime="20200604 14:02:47.751"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;c867211b-d329-434e-88db-68bb838ca522&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.757" level="INFO">${price} = $14.98</msg>
+<status status="PASS" starttime="20200604 14:02:47.752" endtime="20200604 14:02:47.757"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.757" endtime="20200604 14:02:47.758"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.751" endtime="20200604 14:02:47.758"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;2e64fed4-e308-455e-95ac-86ef8d8d15a6&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.763" level="INFO">${price} = $9.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.758" endtime="20200604 14:02:47.763"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.763" endtime="20200604 14:02:47.764"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.758" endtime="20200604 14:02:47.764"></status>
+</kw>
+<kw name="${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;964dfba08ac3fac6755a0407f1e262c7&quot;, element=&quot;2ce7c35a-0cc2-4106-98e2-f77dd0235078&quot;)&gt;" type="foritem">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${price}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.769" level="INFO">${price} = $349.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.764" endtime="20200604 14:02:47.769"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" starttime="20200604 14:02:47.769" endtime="20200604 14:02:47.769"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.764" endtime="20200604 14:02:47.769"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.659" endtime="20200604 14:02:47.769"></status>
+</kw>
+<msg timestamp="20200604 14:02:47.769" level="INFO">@{prices} = [ $79.99 | $269.99 | $11.99 | $10.99 | $8.99 | $29.99 | $39.99 | $149.99 | $13.99 | $10.99 | $109.99 | $59.99 | $22.49 | $10.95 | $10.99 | $14.98 | $9.99 | $349.99 ]</msg>
+<status status="PASS" starttime="20200604 14:02:47.644" endtime="20200604 14:02:47.769"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${titles}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200604 14:02:47.770" level="INFO">Length is 18</msg>
+<msg timestamp="20200604 14:02:47.770" level="INFO">${length} = 18</msg>
+<status status="PASS" starttime="20200604 14:02:47.769" endtime="20200604 14:02:47.770"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${length} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.770" level="INFO">Certified Refurbished Kindle - Now with a Built-in Front Light - Black - Includes Special Offers</msg>
+<status status="PASS" starttime="20200604 14:02:47.770" endtime="20200604 14:02:47.770"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.770" level="INFO">$79.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.770" endtime="20200604 14:02:47.771"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.770" endtime="20200604 14:02:47.771"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.771" level="INFO">All-new Kindle Oasis - Now with adjustable warm light - 8 GB, Graphite (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.771" endtime="20200604 14:02:47.771"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.771" level="INFO">$269.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.771" endtime="20200604 14:02:47.771"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.771" endtime="20200604 14:02:47.771"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.772" level="INFO">Kindle Fire Fast Charger [UL Listed] Fotbor AC Adapter 2A Rapid Charger with 6.6Ft Micro-USB Cable for Amazon Kindle Fire 7 HD 8 10 Tablet, Kids Edition,Kindle Fire HD HDX 7” 8.9”, Fire Phone (Black)</msg>
+<status status="PASS" starttime="20200604 14:02:47.771" endtime="20200604 14:02:47.772"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.772" level="INFO">$11.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.772" endtime="20200604 14:02:47.772"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.771" endtime="20200604 14:02:47.772"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.772" level="INFO">TAPLE Kindle Fire Charger, [UL Listed] AC Adapter Rapid Charger with 5 Ft Micro-USB Cable Compatible Kindle Fire HD, HDX 6" 7" 8.9" 9.7", Fire 7 8 10 Tablet and Phone, Tab Power Supply Cord</msg>
+<status status="PASS" starttime="20200604 14:02:47.772" endtime="20200604 14:02:47.772"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.773" level="INFO">$10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.772" endtime="20200604 14:02:47.773"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.772" endtime="20200604 14:02:47.773"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.773" level="INFO">AILKIN Dual USB Port Wall Phone Adapter with 6.6FT Android Micro USB Port Charger Cable Compatible for Samsung J8 J7 Pro, S6 S7 Edge, LG G4 Stylo 3 2, Kindle Fire, Motorola Moto G5S/G4 Android Cable</msg>
+<status status="PASS" starttime="20200604 14:02:47.773" endtime="20200604 14:02:47.773"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.773" level="INFO">$8.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.773" endtime="20200604 14:02:47.773"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.773" endtime="20200604 14:02:47.773"></status>
+</kw>
+<kw name="${index} = 5" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.774" level="INFO">All-new Kindle Paperwhite Water-Safe Fabric Cover (10th Generation-2018), Marine Blue</msg>
+<status status="PASS" starttime="20200604 14:02:47.773" endtime="20200604 14:02:47.774"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.774" level="INFO">$29.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.774" endtime="20200604 14:02:47.774"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.773" endtime="20200604 14:02:47.774"></status>
+</kw>
+<kw name="${index} = 6" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.774" level="INFO">Kindle Paperwhite Leather Cover (10th Generation-2018)</msg>
+<status status="PASS" starttime="20200604 14:02:47.774" endtime="20200604 14:02:47.774"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.775" level="INFO">$39.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.774" endtime="20200604 14:02:47.775"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.774" endtime="20200604 14:02:47.775"></status>
+</kw>
+<kw name="${index} = 7" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.775" level="INFO">Kindle Paperwhite – Now Waterproof with 2x the Storage - 8 GB (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.775" endtime="20200604 14:02:47.775"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.775" level="INFO">$149.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.775" endtime="20200604 14:02:47.775"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.775" endtime="20200604 14:02:47.775"></status>
+</kw>
+<kw name="${index} = 8" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.776" level="INFO">Kindle Fire Fast Charger, 5V 2.4A 24W Charger for Amazon Kindle Fire HD, HDX 6" 7" 8.9" 9.7", Fire 7 8, Dual Port USB Wall Charger with 6.6FT Micro USB Cable for Samsung, Galaxy S7, Android Phone</msg>
+<status status="PASS" starttime="20200604 14:02:47.776" endtime="20200604 14:02:47.776"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.776" level="INFO">$13.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.776" endtime="20200604 14:02:47.776"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.775" endtime="20200604 14:02:47.776"></status>
+</kw>
+<kw name="${index} = 9" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.776" level="INFO">TSAUTO Tablet Kindle Fire Fast Charger [UL Listed] 2.4A AC Adapter Rapid Adapter with 5.0 Ft Micro-USB Cable for Kindle Fire HD HDX 6" 7" 8.9" 9.7" Fire 7 8 10 Tablet and Phone Tab Power Supply Cord</msg>
+<status status="PASS" starttime="20200604 14:02:47.776" endtime="20200604 14:02:47.776"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.777" level="INFO">$10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.776" endtime="20200604 14:02:47.777"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.776" endtime="20200604 14:02:47.777"></status>
+</kw>
+<kw name="${index} = 10" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.777" level="INFO">All-new Kindle - Now with a Built-in Front Light - 4 GB, Black (International Version)</msg>
+<status status="PASS" starttime="20200604 14:02:47.777" endtime="20200604 14:02:47.777"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.777" level="INFO">$109.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.777" endtime="20200604 14:02:47.777"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.777" endtime="20200604 14:02:47.777"></status>
+</kw>
+<kw name="${index} = 11" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.778" level="INFO">All-new Kindle Paperwhite Premium Leather Cover (10th Generation-2018), Rustic</msg>
+<status status="PASS" starttime="20200604 14:02:47.778" endtime="20200604 14:02:47.778"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.778" level="INFO">$59.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.778" endtime="20200604 14:02:47.778"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.777" endtime="20200604 14:02:47.778"></status>
+</kw>
+<kw name="${index} = 12" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.779" level="INFO">Made for Amazon SanDisk 128 GB Micro SD Memory Card for Fire Tablets and Fire TV</msg>
+<status status="PASS" starttime="20200604 14:02:47.778" endtime="20200604 14:02:47.779"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.779" level="INFO">$22.49</msg>
+<status status="PASS" starttime="20200604 14:02:47.779" endtime="20200604 14:02:47.779"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.778" endtime="20200604 14:02:47.779"></status>
+</kw>
+<kw name="${index} = 13" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.780" level="INFO">Infiland Kindle Paperwhite 2018 Case Compatible with Amazon Kindle Paperwhite 10th Generation 6 inches 2018 Release(Auto Wake/Sleep),Galaxy</msg>
+<status status="PASS" starttime="20200604 14:02:47.779" endtime="20200604 14:02:47.780"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.780" level="INFO">$10.95</msg>
+<status status="PASS" starttime="20200604 14:02:47.780" endtime="20200604 14:02:47.780"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.779" endtime="20200604 14:02:47.780"></status>
+</kw>
+<kw name="${index} = 14" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.780" level="INFO">Boskin AMZ F i r e 7 case 2017 Release,Kickstand/Impact Resistant Heavy Duty case for K i n d l e F i r e 7 inch 2017 (Black)</msg>
+<status status="PASS" starttime="20200604 14:02:47.780" endtime="20200604 14:02:47.781"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.781" level="INFO">$10.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.781" endtime="20200604 14:02:47.781"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.780" endtime="20200604 14:02:47.781"></status>
+</kw>
+<kw name="${index} = 15" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.781" level="INFO">MEKO(TM) (2 Pcs)[2 in 1 Precision Series] Disc Stylus/Styli Bundle with 4 Replaceable Disc Tips, 2 Replaceable Fiber Tips for All Touch Screen Devices - (Black/Blue)</msg>
+<status status="PASS" starttime="20200604 14:02:47.781" endtime="20200604 14:02:47.781"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.781" level="INFO">$14.98</msg>
+<status status="PASS" starttime="20200604 14:02:47.781" endtime="20200604 14:02:47.782"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.781" endtime="20200604 14:02:47.782"></status>
+</kw>
+<kw name="${index} = 16" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.782" level="INFO">MAOMI for KINDIE FlRE 7 case 2017 Release,Kickstand Shock-Absorption Heavy Duty Armor Defender Cover (Red)</msg>
+<status status="PASS" starttime="20200604 14:02:47.782" endtime="20200604 14:02:47.782"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.782" level="INFO">$9.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.782" endtime="20200604 14:02:47.782"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.782" endtime="20200604 14:02:47.782"></status>
+</kw>
+<kw name="${index} = 17" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.783" level="INFO">All-new Kindle Oasis - Now with adjustable warm light - 32 GB, Graphite - Free 4G LTE + Wi-Fi (International Version - Vodafone)</msg>
+<status status="PASS" starttime="20200604 14:02:47.782" endtime="20200604 14:02:47.783"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${prices}[${index}]</arg>
+</arguments>
+<msg timestamp="20200604 14:02:47.783" level="INFO">$349.99</msg>
+<status status="PASS" starttime="20200604 14:02:47.783" endtime="20200604 14:02:47.783"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.782" endtime="20200604 14:02:47.783"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.770" endtime="20200604 14:02:47.783"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:47.347" endtime="20200604 14:02:47.783"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200604 14:02:47.783" endtime="20200604 14:02:49.924"></status>
+</kw>
+<tags>
+<tag>Owner-Janey smoke</tag>
+<tag>StoryNumber-001</tag>
+</tags>
+<status status="PASS" starttime="20200604 14:02:40.248" endtime="20200604 14:02:49.924" critical="yes"></status>
+</test>
+<test id="s1-t2" name="User search different products from different deparments">
+<kw name="Search Different Products From Different Departments" library="search_resource">
+<arguments>
+<arg>Baby</arg>
+<arg>food</arg>
+</arguments>
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:49.924" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:02:49.924" endtime="20200604 14:02:55.138"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:49.924" endtime="20200604 14:02:55.138"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:02:55.161" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:02:55.139" endtime="20200604 14:02:55.162"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:55.138" endtime="20200604 14:02:55.162"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:49.924" endtime="20200604 14:02:55.162"></status>
+</kw>
+<kw name="Search &quot;${searchText}&quot; From &quot;${departmentName}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:55.164" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Baby.</msg>
+<status status="PASS" starttime="20200604 14:02:55.163" endtime="20200604 14:02:55.263"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:55.163" endtime="20200604 14:02:55.263"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:55.265" level="INFO">Typing text 'food' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:02:55.264" endtime="20200604 14:02:55.486"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:55.264" endtime="20200604 14:02:55.486"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:02:55.487" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:02:55.487" endtime="20200604 14:02:57.362"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:55.486" endtime="20200604 14:02:57.363"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:57.393" level="INFO">Page title is 'Amazon.com : food'.</msg>
+<status status="PASS" starttime="20200604 14:02:57.363" endtime="20200604 14:02:57.394"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:57.363" endtime="20200604 14:02:57.394"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:55.162" endtime="20200604 14:02:57.394"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:49.924" endtime="20200604 14:02:57.394"></status>
+</kw>
+<kw name="Search Different Products From Different Departments" library="search_resource">
+<arguments>
+<arg>Books</arg>
+<arg>Breath</arg>
+</arguments>
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:02:57.395" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:02:57.395" endtime="20200604 14:03:03.642"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:57.395" endtime="20200604 14:03:03.642"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:03.660" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:03.642" endtime="20200604 14:03:03.660"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:03.642" endtime="20200604 14:03:03.660"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:57.395" endtime="20200604 14:03:03.660"></status>
+</kw>
+<kw name="Search &quot;${searchText}&quot; From &quot;${departmentName}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:03.661" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Books.</msg>
+<status status="PASS" starttime="20200604 14:03:03.661" endtime="20200604 14:03:03.860"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:03.660" endtime="20200604 14:03:03.861"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:03.862" level="INFO">Typing text 'Breath' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:03:03.861" endtime="20200604 14:03:04.017"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:03.861" endtime="20200604 14:03:04.017"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:03:04.018" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:03:04.018" endtime="20200604 14:03:05.511"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:04.018" endtime="20200604 14:03:05.511"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:05.564" level="INFO">Page title is 'Amazon.com : Breath'.</msg>
+<status status="PASS" starttime="20200604 14:03:05.512" endtime="20200604 14:03:05.564"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:05.511" endtime="20200604 14:03:05.564"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:03.660" endtime="20200604 14:03:05.564"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:02:57.394" endtime="20200604 14:03:05.564"></status>
+</kw>
+<kw name="Search Different Products From Different Departments" library="search_resource">
+<arguments>
+<arg>Computers</arg>
+<arg>monitor</arg>
+</arguments>
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:05.566" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:05.566" endtime="20200604 14:03:11.478"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:05.565" endtime="20200604 14:03:11.478"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:11.491" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:11.479" endtime="20200604 14:03:11.491"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:11.479" endtime="20200604 14:03:11.491"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:05.565" endtime="20200604 14:03:11.491"></status>
+</kw>
+<kw name="Search &quot;${searchText}&quot; From &quot;${departmentName}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:11.492" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Computers.</msg>
+<status status="PASS" starttime="20200604 14:03:11.492" endtime="20200604 14:03:11.690"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:11.492" endtime="20200604 14:03:11.691"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:11.693" level="INFO">Typing text 'monitor' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:03:11.692" endtime="20200604 14:03:11.802"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:11.691" endtime="20200604 14:03:11.803"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:03:11.804" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:03:11.803" endtime="20200604 14:03:15.295"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:11.803" endtime="20200604 14:03:15.296"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:15.307" level="INFO">Page title is 'Amazon.com : monitor'.</msg>
+<status status="PASS" starttime="20200604 14:03:15.297" endtime="20200604 14:03:15.307"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:15.296" endtime="20200604 14:03:15.307"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:11.491" endtime="20200604 14:03:15.307"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:05.565" endtime="20200604 14:03:15.307"></status>
+</kw>
+<kw name="Search Different Products From Different Departments" library="search_resource">
+<arguments>
+<arg>Girls' Fashion</arg>
+<arg>red dress</arg>
+</arguments>
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:15.309" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:15.309" endtime="20200604 14:03:20.124"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:15.309" endtime="20200604 14:03:20.125"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:20.149" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:20.126" endtime="20200604 14:03:20.149"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:20.125" endtime="20200604 14:03:20.150"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:15.308" endtime="20200604 14:03:20.150"></status>
+</kw>
+<kw name="Search &quot;${searchText}&quot; From &quot;${departmentName}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:20.151" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Girls' Fashion.</msg>
+<status status="PASS" starttime="20200604 14:03:20.151" endtime="20200604 14:03:20.401"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:20.151" endtime="20200604 14:03:20.402"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:20.403" level="INFO">Typing text 'red dress' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:03:20.403" endtime="20200604 14:03:20.532"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:20.402" endtime="20200604 14:03:20.532"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:03:20.533" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:03:20.533" endtime="20200604 14:03:24.290"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:20.532" endtime="20200604 14:03:24.290"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:24.298" level="INFO">Page title is 'Amazon.com : red dress'.</msg>
+<status status="PASS" starttime="20200604 14:03:24.291" endtime="20200604 14:03:24.298"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:24.290" endtime="20200604 14:03:24.298"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:20.150" endtime="20200604 14:03:24.298"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:15.308" endtime="20200604 14:03:24.299"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200604 14:03:24.299" endtime="20200604 14:03:32.828"></status>
+</kw>
+<tags>
+<tag>data</tag>
+<tag>StoryNumber-001</tag>
+</tags>
+<status status="PASS" starttime="20200604 14:02:49.924" endtime="20200604 14:03:32.829" critical="yes"></status>
+</test>
+<test id="s1-t3" name="User search products from departments">
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:32.839" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:32.838" endtime="20200604 14:03:38.497"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:32.836" endtime="20200604 14:03:38.498"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:38.525" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:38.500" endtime="20200604 14:03:38.525"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.498" endtime="20200604 14:03:38.525"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:32.835" endtime="20200604 14:03:38.525"></status>
+</kw>
+<kw name="Search Products From Departments" library="search_resource">
+<arguments>
+<arg>&amp;{searchDict}</arg>
+</arguments>
+<kw name="${key} | ${value} IN [ &amp;{searchDict} ]" type="for">
+<kw name="${key} = Baby, ${value} = food" type="foritem">
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:38.528" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:38.527" endtime="20200604 14:03:43.380"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.527" endtime="20200604 14:03:43.380"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:43.393" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:43.380" endtime="20200604 14:03:43.393"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:43.380" endtime="20200604 14:03:43.393"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.526" endtime="20200604 14:03:43.393"></status>
+</kw>
+<kw name="Search &quot;${value}&quot; From &quot;${key}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:43.394" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Baby.</msg>
+<status status="PASS" starttime="20200604 14:03:43.394" endtime="20200604 14:03:43.572"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:43.393" endtime="20200604 14:03:43.572"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:43.573" level="INFO">Typing text 'food' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:03:43.573" endtime="20200604 14:03:43.682"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:43.572" endtime="20200604 14:03:43.683"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:03:43.684" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:03:43.684" endtime="20200604 14:03:45.439"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:43.683" endtime="20200604 14:03:45.440"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:45.475" level="INFO">Page title is 'Amazon.com : food'.</msg>
+<status status="PASS" starttime="20200604 14:03:45.440" endtime="20200604 14:03:45.475"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:45.440" endtime="20200604 14:03:45.476"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:43.393" endtime="20200604 14:03:45.476"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.526" endtime="20200604 14:03:45.476"></status>
+</kw>
+<kw name="${key} = Girls' Fashion, ${value} = red dress" type="foritem">
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:45.477" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:45.476" endtime="20200604 14:03:50.673"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:45.476" endtime="20200604 14:03:50.673"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:03:50.706" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:03:50.674" endtime="20200604 14:03:50.706"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:50.673" endtime="20200604 14:03:50.706"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:45.476" endtime="20200604 14:03:50.707"></status>
+</kw>
+<kw name="Search &quot;${value}&quot; From &quot;${key}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:50.708" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Girls' Fashion.</msg>
+<status status="PASS" starttime="20200604 14:03:50.708" endtime="20200604 14:03:51.007"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:50.707" endtime="20200604 14:03:51.008"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:51.009" level="INFO">Typing text 'red dress' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:03:51.009" endtime="20200604 14:03:51.153"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:51.008" endtime="20200604 14:03:51.153"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:03:51.154" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:03:51.153" endtime="20200604 14:03:54.933"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:51.153" endtime="20200604 14:03:54.933"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:54.938" level="INFO">Page title is 'Amazon.com : red dress'.</msg>
+<status status="PASS" starttime="20200604 14:03:54.934" endtime="20200604 14:03:54.938"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:54.933" endtime="20200604 14:03:54.938"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:50.707" endtime="20200604 14:03:54.938"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:45.476" endtime="20200604 14:03:54.938"></status>
+</kw>
+<kw name="${key} = Computers, ${value} = monitor" type="foritem">
+<kw name="Open Browser to Go to Home Page" library="search_resource">
+<kw name="Go to Home Page" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${DEVICE URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200604 14:03:54.940" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" starttime="20200604 14:03:54.939" endtime="20200604 14:04:00.346"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:54.939" endtime="20200604 14:04:00.347"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="search_resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</arg>
+</arguments>
+<msg timestamp="20200604 14:04:00.370" level="INFO">Page title is 'Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more'.</msg>
+<status status="PASS" starttime="20200604 14:04:00.347" endtime="20200604 14:04:00.370"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:00.347" endtime="20200604 14:04:00.370"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:54.939" endtime="20200604 14:04:00.371"></status>
+</kw>
+<kw name="Search &quot;${value}&quot; From &quot;${key}&quot;" library="search_resource">
+<kw name="Select A Department" library="home_page">
+<arguments>
+<arg>${departmentName}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>css:select[class='nav-search-dropdown searchSelect']</arg>
+<arg>${departmentName}</arg>
+</arguments>
+<msg timestamp="20200604 14:04:00.372" level="INFO">Selecting options from selection list 'css:select[class='nav-search-dropdown searchSelect']' by label Computers.</msg>
+<status status="PASS" starttime="20200604 14:04:00.371" endtime="20200604 14:04:00.612"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:00.371" endtime="20200604 14:04:00.612"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:.nav-search-field&gt;input</arg>
+<arg>${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:04:00.615" level="INFO">Typing text 'monitor' into text field 'css:.nav-search-field&gt;input'.</msg>
+<status status="PASS" starttime="20200604 14:04:00.614" endtime="20200604 14:04:00.744"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:00.612" endtime="20200604 14:04:00.744"></status>
+</kw>
+<kw name="Click Search Button" library="home_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit'][class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200604 14:04:00.745" level="INFO">Clicking button 'css:input[type='submit'][class='nav-input']'.</msg>
+<status status="PASS" starttime="20200604 14:04:00.744" endtime="20200604 14:04:05.224"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:00.744" endtime="20200604 14:04:05.224"></status>
+</kw>
+<kw name="Search Result Page Should be Open" library="search_resource">
+<arguments>
+<arg>${searchText}</arg>
+</arguments>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Amazon.com : ${searchText}</arg>
+</arguments>
+<msg timestamp="20200604 14:04:05.229" level="INFO">Page title is 'Amazon.com : monitor'.</msg>
+<status status="PASS" starttime="20200604 14:04:05.225" endtime="20200604 14:04:05.229"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:05.225" endtime="20200604 14:04:05.229"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:04:00.371" endtime="20200604 14:04:05.229"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:54.938" endtime="20200604 14:04:05.229"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.526" endtime="20200604 14:04:05.229"></status>
+</kw>
+<status status="PASS" starttime="20200604 14:03:38.525" endtime="20200604 14:04:05.229"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200604 14:04:05.230" endtime="20200604 14:04:13.809"></status>
+</kw>
+<tags>
+<tag>StoryNumber-001</tag>
+<tag>YML</tag>
+</tags>
+<status status="PASS" starttime="20200604 14:03:32.833" endtime="20200604 14:04:13.810" critical="yes"></status>
+</test>
+<doc>a test case to search device</doc>
+<status status="PASS" starttime="20200604 14:02:40.093" endtime="20200604 14:04:13.813"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">data</stat>
+<stat pass="1" fail="0">Owner-Janey smoke</stat>
+<stat pass="3" fail="0">StoryNumber-001</stat>
+<stat pass="1" fail="0">YML</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Test Search Function">Test Search Function</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

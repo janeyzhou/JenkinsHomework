@@ -1,0 +1,11 @@
+[ {
+  "uid" : "6b20a8697c9dd13",
+  "name" : "login with valid user account -- @1.1 valid user account",
+  "time" : {
+    "start" : 1594612102160,
+    "stop" : 1594612115316,
+    "duration" : 13156
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]

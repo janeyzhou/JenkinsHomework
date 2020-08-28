@@ -1,0 +1,165 @@
+[
+{
+  "description": [
+    "user is able to login with valid username and password, otherwise user is not able to access the home page"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/Login/Login.feature:4",
+      "name": "Login without input username",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/Login/Login.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:10"
+          },
+          "name": "a set of valid user account",
+          "result": {
+            "duration": 0.0009968280792236328,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "username",
+              "password"
+            ],
+            "rows": [
+              [
+                "",
+                "@A12345b"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "Given",
+          "location": "features/Login/Login.feature:8",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:40"
+          },
+          "name": "I am not logged in",
+          "result": {
+            "duration": 0.004992961883544922,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/Login/Login.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:17"
+          },
+          "name": "I login without username",
+          "result": {
+            "duration": 12.002536058425903,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/Login/Login.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:29"
+          },
+          "name": "I should see the alert message",
+          "result": {
+            "duration": 0.01880788803100586,
+            "status": "passed"
+          },
+          "step_type": "then",
+          "text": "Plase fill in your email address\r"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/Login/Login.feature:23",
+      "name": "login with valid user account -- @1.1 valid user account",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/Login/Login.feature:17",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:40"
+          },
+          "name": "I am not logged in",
+          "result": {
+            "duration": 0.007013797760009766,
+            "error_message": [
+              "",
+              "Captured stdout:",
+              "HOOK-ERROR in after_step: AttributeError: 'Context' object has no attribute 'username'",
+              "",
+              "Captured logging:",
+              "INFO:root:Check cookies",
+              "INFO:root:you are not logged in, please continue"
+            ],
+            "status": "failed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/Login/Login.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "janey_zhou@epam.com"
+              },
+              {
+                "name": "password",
+                "value": "@A12345b"
+              }
+            ],
+            "location": "features/Login/steps/step_login.py:55"
+          },
+          "name": "I login with valid account \"janey_zhou@epam.com\" \"@A12345b\"",
+          "result": {
+            "duration": 10.737792015075684,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/Login/Login.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/Login/steps/step_login.py:68"
+          },
+          "name": "I should login successfully",
+          "result": {
+            "duration": 0.03587746620178223,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        "valid"
+      ],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/Login/Login.feature:1",
+  "name": "Login",
+  "status": "failed",
+  "tags": []
+}
+]

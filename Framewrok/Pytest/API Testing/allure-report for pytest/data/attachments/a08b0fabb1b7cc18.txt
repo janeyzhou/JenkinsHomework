@@ -1,0 +1,7 @@
+[32mINFO    [0m root:Logger.py:18 setup_method()
+[32mINFO    [0m root:Logger.py:18 Start running test case: Create employee - Salary in char
+[32mINFO    [0m root:Logger.py:18 create a new employee
+[32mINFO    [0m root:Logger.py:18 the new empolyee id is 46
+[32mINFO    [0m root:Logger.py:18 Find an employee with id: 46 from employee list
+[32mINFO    [0m root:Logger.py:18 Delete an employee with id: 46
+[32mINFO    [0m root:Logger.py:18 teardown_method()

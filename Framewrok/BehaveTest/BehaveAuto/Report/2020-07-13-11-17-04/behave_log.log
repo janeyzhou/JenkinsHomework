@@ -1,0 +1,59 @@
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_all  ]: Create screenshot folder (environment.py:27)
+
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_all  ]: Get test date (environment.py:31)
+
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_feature]: start before feature ... (environment.py:36)
+
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_scenario]: Set step to continue when raise exception (environment.py:40)
+
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_scenario]: Start before scenario ... (environment.py:43)
+
+[INFO]--[2020-07-13 11:17:04]--[MainThread]--[before_scenario]: Init driver (environment.py:45)
+
+[INFO]--[2020-07-13 11:17:07]--[Login without input username/a set of valid user account]--[get_user_account]: User account is /@A12345b (step_login.py:14)
+
+[INFO]--[2020-07-13 11:17:07]--[Login without input username/I am not logged in]--[check_cookies]: Check cookies (step_login.py:43)
+
+[INFO]--[2020-07-13 11:17:07]--[Login without input username/I am not logged in]--[check_cookies]: you are not logged in, please continue (step_login.py:49)
+
+[INFO]--[2020-07-13 11:17:07]--[Login without input username/I login without username]--[login_without_username]: Login with out username (step_login.py:20)
+
+[ERROR]--[2020-07-13 11:17:12]--[Login without input username/I login without username]--[login_without_username]: Failed to open page https://acme-test.uipath.com/account/login (step_login.py:25)
+
+[INFO]--[2020-07-13 11:17:12]--[Login without input username/I should see the alert message]--[check_error_message]: Verify alert message (step_login.py:32)
+
+[ERROR]--[2020-07-13 11:17:12]--[Login without input username/I should see the alert message]--[check_error_message]: Message: no such alert
+  (Session info: chrome=83.0.4103.116)
+ (step_login.py:36)
+
+[INFO]--[2020-07-13 11:17:12]--[Login without input username/I should see the alert message]--[after_scenario]: Start after scenario ... (environment.py:65)
+
+[INFO]--[2020-07-13 11:17:12]--[Login without input username/I should see the alert message]--[after_scenario]: Quite driver after scenario (environment.py:66)
+
+[INFO]--[2020-07-13 11:17:15]--[Login without input username/I should see the alert message]--[after_scenario]: Set thread name as MainThread (environment.py:69)
+
+[INFO]--[2020-07-13 11:17:15]--[MainThread]--[before_scenario]: Set step to continue when raise exception (environment.py:40)
+
+[INFO]--[2020-07-13 11:17:15]--[MainThread]--[before_scenario]: Start before scenario ... (environment.py:43)
+
+[INFO]--[2020-07-13 11:17:15]--[MainThread]--[before_scenario]: Init driver (environment.py:45)
+
+[INFO]--[2020-07-13 11:17:18]--[login with valid user account -- @1.1 valid user account/I am not logged in]--[check_cookies]: Check cookies (step_login.py:43)
+
+[INFO]--[2020-07-13 11:17:18]--[login with valid user account -- @1.1 valid user account/I am not logged in]--[check_cookies]: you are not logged in, please continue (step_login.py:49)
+
+[ERROR]--[2020-07-13 11:17:23]--[login with valid user account -- @1.1 valid user account/I login with valid account "janey_zhou@epam.com" "@A12345b"]--[login_with_valid_account]: Failed to open page https://acme-test.uipath.com/account/login (step_login.py:64)
+
+[ERROR]--[2020-07-13 11:17:33]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[verify_greeting]: Message: 
+ (step_login.py:74)
+
+[INFO]--[2020-07-13 11:17:34]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Start after scenario ... (environment.py:65)
+
+[INFO]--[2020-07-13 11:17:34]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Quite driver after scenario (environment.py:66)
+
+[INFO]--[2020-07-13 11:17:36]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Set thread name as MainThread (environment.py:69)
+
+[INFO]--[2020-07-13 11:17:36]--[MainThread]--[after_feature]: Start after feature ... (environment.py:77)
+
+[INFO]--[2020-07-13 11:17:36]--[MainThread]--[after_all   ]: Start after all ... (environment.py:81)
+

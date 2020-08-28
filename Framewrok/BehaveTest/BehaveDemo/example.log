@@ -1,0 +1,14 @@
+[INFO]--[2020-06-17 12:02:10]--[MainThread]--[before_all  ]: I will run before the all (environment.py:29)
+
+[INFO]--[2020-06-17 12:02:10]--[MainThread]--[before_feature]: I will run before the feature (environment.py:33)
+
+[INFO]--[2020-06-17 12:02:10]--[MainThread]--[before_tag  ]: I will run before the tag (environment.py:37)
+
+[INFO]--[2020-06-17 12:02:12]--[Login with user without password]--[__init__    ]: Could not connect to port 4444 on host localhost (remote_connection.py:116)
+
+[INFO]--[2020-06-17 12:02:12]--[Login with user without password]--[__init__    ]: Could not get IP address for host: localhost (remote_connection.py:135)
+
+[WARNING]--[2020-06-17 12:02:16]--[Login with user without password]--[urlopen     ]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000132F0CB3970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session (connectionpool.py:749)
+
+[WARNING]--[2020-06-17 12:02:20]--[Login with user without password]--[urlopen     ]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000132F0CB3AF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session (connectionpool.py:749)
+

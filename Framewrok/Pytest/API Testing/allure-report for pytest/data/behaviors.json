@@ -1,0 +1,57 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "test_create_user[case0]",
+    "uid" : "41c17875dfcd91df",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1594609040872,
+      "stop" : 1594609044746,
+      "duration" : 3874
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'Title': 'Create employee - Correct Name and Salary', 'Input': '{\"name\": \"test1\",\"salary\":\"123456\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test1\",\"salary\": \"123456\"}}'}" ]
+  }, {
+    "name" : "test_create_user[case1]",
+    "uid" : "5b06d8df6b3188a1",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1594609044772,
+      "stop" : 1594609048085,
+      "duration" : 3313
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'Title': 'Create employee - Name with special character', 'Input': '{\"name\": \"test*$\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test*$\"}}'}" ]
+  }, {
+    "name" : "test_create_user[case2]",
+    "uid" : "89939877aa78f2ac",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1594609048102,
+      "stop" : 1594609051329,
+      "duration" : 3227
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'Title': 'Create employee - Salary in char', 'Input': '{\"salary\":\"test\"}', 'Output': '{\"status\": \"success\",\"data\": {\"salary\": \"test\"}}'}" ]
+  }, {
+    "name" : "test_delete_user",
+    "uid" : "34d4d040fc4753bf",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1594609051345,
+      "stop" : 1594609051345,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

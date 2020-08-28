@@ -1,0 +1,12 @@
+{
+   "user1":{
+      "name":"test1",
+      "salary":"10000"
+   },
+   "user2":{
+      "name":"test1@!"
+   },
+   "user3":{
+      "salary":"good"
+   }
+}

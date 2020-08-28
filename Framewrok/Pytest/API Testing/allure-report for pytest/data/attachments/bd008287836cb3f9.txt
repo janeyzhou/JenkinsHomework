@@ -1,0 +1,2 @@
+[32mINFO    [0m root:Logger.py:18 teardown_class()
+[32mINFO    [0m root:Logger.py:18 teardown_module()

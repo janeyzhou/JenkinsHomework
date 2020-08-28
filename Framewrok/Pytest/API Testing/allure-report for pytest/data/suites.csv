@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 13 10:57:28 CST 2020","Mon Jul 13 10:57:31 CST 2020","3227","APIAuto.TestSuite","test_user","TestUser","","","test_create_user[case2]",""
+"passed","Mon Jul 13 10:57:24 CST 2020","Mon Jul 13 10:57:28 CST 2020","3313","APIAuto.TestSuite","test_user","TestUser","","","test_create_user[case1]",""
+"skipped","Mon Jul 13 10:57:31 CST 2020","Mon Jul 13 10:57:31 CST 2020","0","APIAuto.TestSuite","test_user","TestUser","","","test_delete_user",""
+"passed","Mon Jul 13 10:57:20 CST 2020","Mon Jul 13 10:57:24 CST 2020","3874","APIAuto.TestSuite","test_user","TestUser","","","test_create_user[case0]",""

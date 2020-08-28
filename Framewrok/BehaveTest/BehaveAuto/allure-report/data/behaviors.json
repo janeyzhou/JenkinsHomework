@@ -1,0 +1,22 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Login",
+    "children" : [ {
+      "name" : "login with valid user account -- @1.1 valid user account",
+      "uid" : "6b20a8697c9dd13",
+      "parentUid" : "14102d61eef2af473312d4f91dec531b",
+      "status" : "broken",
+      "time" : {
+        "start" : 1594612102160,
+        "stop" : 1594612115316,
+        "duration" : 13156
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "@A12345b", "janey_zhou@epam.com" ]
+    } ],
+    "uid" : "14102d61eef2af473312d4f91dec531b"
+  } ]
+}

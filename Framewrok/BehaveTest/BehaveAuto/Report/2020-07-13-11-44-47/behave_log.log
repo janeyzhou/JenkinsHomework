@@ -1,0 +1,30 @@
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_all  ]: Create screenshot folder (environment.py:27)
+
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_all  ]: Get test date (environment.py:31)
+
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_feature]: start before feature ... (environment.py:36)
+
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_scenario]: Set step to continue when raise exception (environment.py:40)
+
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_scenario]: Start before scenario ... (environment.py:43)
+
+[INFO]--[2020-07-13 11:44:47]--[MainThread]--[before_scenario]: Init driver (environment.py:45)
+
+[INFO]--[2020-07-13 11:44:50]--[login with valid user account -- @1.1 valid user account/I am not logged in]--[check_cookies]: Check cookies (step_login.py:43)
+
+[INFO]--[2020-07-13 11:44:50]--[login with valid user account -- @1.1 valid user account/I am not logged in]--[check_cookies]: you are not logged in, please continue (step_login.py:49)
+
+[INFO]--[2020-07-13 11:44:55]--[login with valid user account -- @1.1 valid user account/I login with valid account "janey_zhou@epam.com" "@A12345b"]--[go_to_page  ]: ACME System 1 - Log In (BasePage.py:56)
+
+[INFO]--[2020-07-13 11:44:55]--[login with valid user account -- @1.1 valid user account/I login with valid account "janey_zhou@epam.com" "@A12345b"]--[go_to_page  ]: ACME System 1 - Log In (BasePage.py:57)
+
+[INFO]--[2020-07-13 11:44:59]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Start after scenario ... (environment.py:65)
+
+[INFO]--[2020-07-13 11:44:59]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Quite driver after scenario (environment.py:66)
+
+[INFO]--[2020-07-13 11:44:59]--[login with valid user account -- @1.1 valid user account/I should login successfully]--[after_scenario]: Set thread name as MainThread (environment.py:69)
+
+[INFO]--[2020-07-13 11:44:59]--[MainThread]--[after_feature]: Start after feature ... (environment.py:77)
+
+[INFO]--[2020-07-13 11:44:59]--[MainThread]--[after_all   ]: Start after all ... (environment.py:81)
+

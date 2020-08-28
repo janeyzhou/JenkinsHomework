@@ -1,0 +1,61 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "APIAuto.TestSuite.test_user",
+    "children" : [ {
+      "name" : "test_create_user[case0]",
+      "uid" : "41c17875dfcd91df",
+      "parentUid" : "fb1fed4a6e3cce7b99e8e4a8547e6d95",
+      "status" : "passed",
+      "time" : {
+        "start" : 1594609040872,
+        "stop" : 1594609044746,
+        "duration" : 3874
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'Title': 'Create employee - Correct Name and Salary', 'Input': '{\"name\": \"test1\",\"salary\":\"123456\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test1\",\"salary\": \"123456\"}}'}" ]
+    }, {
+      "name" : "test_create_user[case1]",
+      "uid" : "5b06d8df6b3188a1",
+      "parentUid" : "fb1fed4a6e3cce7b99e8e4a8547e6d95",
+      "status" : "passed",
+      "time" : {
+        "start" : 1594609044772,
+        "stop" : 1594609048085,
+        "duration" : 3313
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'Title': 'Create employee - Name with special character', 'Input': '{\"name\": \"test*$\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test*$\"}}'}" ]
+    }, {
+      "name" : "test_create_user[case2]",
+      "uid" : "89939877aa78f2ac",
+      "parentUid" : "fb1fed4a6e3cce7b99e8e4a8547e6d95",
+      "status" : "passed",
+      "time" : {
+        "start" : 1594609048102,
+        "stop" : 1594609051329,
+        "duration" : 3227
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'Title': 'Create employee - Salary in char', 'Input': '{\"salary\":\"test\"}', 'Output': '{\"status\": \"success\",\"data\": {\"salary\": \"test\"}}'}" ]
+    }, {
+      "name" : "test_delete_user",
+      "uid" : "34d4d040fc4753bf",
+      "parentUid" : "fb1fed4a6e3cce7b99e8e4a8547e6d95",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1594609051345,
+        "stop" : 1594609051345,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "APIAuto.TestSuite.test_user"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+    "uid1": {
+      "name": "Johnson",
+      "password": "test1"
+    },
+    "uid2": {
+            "name": "Tony",
+            "password": "test2"
+        }
+}

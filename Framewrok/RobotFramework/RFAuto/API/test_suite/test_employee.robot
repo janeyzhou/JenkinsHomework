@@ -1,0 +1,63 @@
+*** Settings ***
+Documentation   test employee API
+Resource        ../employee_api/employee_resource.robot
+Resource        ../business_resource/operate_employee.robot
+Variables       ../config/endPoint.py
+Suite Setup      Create Session      mySession   http://dummy.restapiexample.com    headers=${HEADERS}   cookies=${COOKIES}
+
+*** Variables ***
+Set Global Variable         ${NEWEMPLOYEE}
+
+*** Keywords ***
+
+
+
+*** Test Cases ***
+Get employee list
+    [Tags]  GET
+    Get Employees
+
+Create a specified employee
+    [Tags]  Create
+    Create Employee     user1
+
+Delete an employee
+    [Tags]  Delete
+    Delete Employee     54
+
+Verify valid employee is created succesffully
+    [Tags]  Verify
+    [Template]      Create Valid Employee
+    user1
+    user2
+    user3
+
+Verify new employee is displayed on employee list
+    [Tags]  Display
+    New Employee In Employee List  user1
+
+Verify new employee can be deleted successfully
+    [Tags]  Delete
+    Delete The Created Employee     user1
+
+
+Global new user
+    [Tags]  global
+    ${NEWEMPLOYEE}=     Create Employee     user1
+    Set Global Variable     ${NEWEMPLOYEE}
+
+
+Check new employee is displayed on employee list
+    [Tags]      global
+    ${employee_list}=    Get Employees
+    @{emloyees}=    set variable    ${employee_list}[data]
+    log to console      ${employee_list}
+    @{id_list}=     Create list
+    FOR    ${item}    IN    @{emloyees}
+        Append to list    ${id_list}    ${item}[id]
+    END
+    List Should Contain Value       ${id_list}    ${NEWEMPLOYEE}[data][id]
+
+Check new employee is deleted successfully
+    ${new_id}=   convert to string  ${NEWEMPLOYEE}[data][id]
+    Delete Employee     ${new_id}

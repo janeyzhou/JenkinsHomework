@@ -1,0 +1,69 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "APIAuto.TestSuite",
+    "children" : [ {
+      "name" : "test_user",
+      "children" : [ {
+        "name" : "TestUser",
+        "children" : [ {
+          "name" : "test_create_user[case0]",
+          "uid" : "41c17875dfcd91df",
+          "parentUid" : "80f6b0bc88a438288db16970752f7ff7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1594609040872,
+            "stop" : 1594609044746,
+            "duration" : 3874
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'Title': 'Create employee - Correct Name and Salary', 'Input': '{\"name\": \"test1\",\"salary\":\"123456\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test1\",\"salary\": \"123456\"}}'}" ]
+        }, {
+          "name" : "test_create_user[case1]",
+          "uid" : "5b06d8df6b3188a1",
+          "parentUid" : "80f6b0bc88a438288db16970752f7ff7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1594609044772,
+            "stop" : 1594609048085,
+            "duration" : 3313
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'Title': 'Create employee - Name with special character', 'Input': '{\"name\": \"test*$\"}', 'Output': '{\"status\": \"success\",\"data\": {\"name\": \"test*$\"}}'}" ]
+        }, {
+          "name" : "test_create_user[case2]",
+          "uid" : "89939877aa78f2ac",
+          "parentUid" : "80f6b0bc88a438288db16970752f7ff7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1594609048102,
+            "stop" : 1594609051329,
+            "duration" : 3227
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "{'Title': 'Create employee - Salary in char', 'Input': '{\"salary\":\"test\"}', 'Output': '{\"status\": \"success\",\"data\": {\"salary\": \"test\"}}'}" ]
+        }, {
+          "name" : "test_delete_user",
+          "uid" : "34d4d040fc4753bf",
+          "parentUid" : "80f6b0bc88a438288db16970752f7ff7",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1594609051345,
+            "stop" : 1594609051345,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "80f6b0bc88a438288db16970752f7ff7"
+      } ],
+      "uid" : "de6c808dc04cbdeb6388c97d0ea85dba"
+    } ],
+    "uid" : "aa0c6b54938d4bba374992251ceae1f9"
+  } ]
+}

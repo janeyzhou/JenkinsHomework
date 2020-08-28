@@ -1,0 +1,4 @@
+Title,Input,Output
+Create employee - Correct Name and Salary,"{""name"": ""test1"",""salary"":""123456""}","{""status"": ""success"",""data"": {""name"": ""test1"",""salary"": ""123456""}}"
+Create employee - Name with special character,"{""name"": ""test*$""}","{""status"": ""success"",""data"": {""name"": ""test*$""}}"
+Create employee - Salary in char,"{""salary"":""test""}","{""status"": ""success"",""data"": {""salary"": ""test""}}"

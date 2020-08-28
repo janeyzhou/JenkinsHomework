@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: 'Context' object has no attribute 'username'\n",
+      "children" : [ {
+        "name" : "login with valid user account -- @1.1 valid user account",
+        "uid" : "6b20a8697c9dd13",
+        "parentUid" : "a8bdb9331e3b0b9fa80e1cddad2fab49",
+        "status" : "broken",
+        "time" : {
+          "start" : 1594612102160,
+          "stop" : 1594612115316,
+          "duration" : 13156
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "@A12345b", "janey_zhou@epam.com" ]
+      } ],
+      "uid" : "a8bdb9331e3b0b9fa80e1cddad2fab49"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

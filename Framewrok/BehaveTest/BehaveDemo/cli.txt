@@ -1,0 +1,3 @@
+behave features/Example.feature
+
+behave features/Example.feature -f json.pretty -o test.json  --no-summary

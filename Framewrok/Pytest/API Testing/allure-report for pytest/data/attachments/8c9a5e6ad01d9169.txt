@@ -1,0 +1,7 @@
+[2020-07-13 10:57:24] [INFO]: setup_method()
+[2020-07-13 10:57:24] [INFO]: Start running test case: Create employee - Name with special character
+[2020-07-13 10:57:24] [INFO]: create a new employee
+[2020-07-13 10:57:25] [INFO]: the new empolyee id is 32
+[2020-07-13 10:57:26] [INFO]: Find an employee with id: 32 from employee list
+[2020-07-13 10:57:26] [INFO]: Delete an employee with id: 32
+[2020-07-13 10:57:28] [INFO]: teardown_method()

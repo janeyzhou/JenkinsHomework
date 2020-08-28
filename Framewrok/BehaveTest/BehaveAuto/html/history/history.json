@@ -1,0 +1,22 @@
+{
+  "8209c5939684d1e0e3f58e6ec602b90d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef47daf09b18c97c",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'Context' object has no attribute 'username'\n",
+      "time" : {
+        "start" : 1594612102160,
+        "stop" : 1594612115316,
+        "duration" : 13156
+      }
+    } ]
+  }
+}
