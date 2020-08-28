@@ -1,5 +1,7 @@
-.pytest_cache
-.vscode
-__pycache__
-my_results
-*.pptx
+# exclude the enter folder named ".pytest_cashe" and it's subfolders
+.pytest_cache/
+.idea/
+__pycache__/
+reports/
+.gitignore
+venv/
